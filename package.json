@@ -5,7 +5,8 @@
 	"type": "module",
 	"scripts": {
 		"dev:vite": "vite",
-		"dev": "wrangler pages dev dist --port 5173",
+		"dev:pages": "wrangler pages dev functions",
+		"dev": "pnpm dev:vite & pnpm dev:pages",
 		"build": "tsc -b && vite build",
 		"preview": "vite preview",
 		"format": "biome format --write . && dprint fmt  && textlint --fix \"**/*.md\""

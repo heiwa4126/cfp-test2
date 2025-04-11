@@ -35,3 +35,12 @@ pnpm のバージョン指定用に
 functions を使ってみたいので、
 wrangler を設定する。
 C3 でテンプレート作ってコピペすればいいと思う。
+
+"wrangler pages dev --local -- vite" が
+
+> ▲ [WARNING] Specifying a -- <command> or --proxy is deprecated and will be removed in a future version of Wrangler.
+> Build your application to a directory and run the wrangler pages dev <directory> instead.
+
+ということで使えなくなるらしい。
+
+vite 側の proxy を使う。[vite.config.ts](vite.config.ts)参照。
