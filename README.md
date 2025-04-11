@@ -1,54 +1,34 @@
-# React + TypeScript + Vite
+# cfp-test2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GitHub 連携ありで Cloudflare Pages の練習。
 
-Currently, two official plugins are available:
+Vite の React の SPA。SPA なので"Assets only"(スタティック)なコンテンツのみ。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+pnpm create vite cfp-test2 --template react-ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+で作って、ちょっとだけ修正 & リフォーマットしたもの。
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Cloudflare Pages のために変更した点
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+ビルドコマンドは `pnpm install --frozen-lockfile && pnpm run build`
+(`npm ci`に相当)
+
+ビルド出力は dist (普通)
+
+Nodejs と
+pnpm のバージョン指定用に
+ビルドの環境変数を指定した。
+
+参照: [Build image · Cloudflare Pages docs](https://developers.cloudflare.com/pages/configuration/build-image/?utm_source=chatgpt.com#languages-and-runtime)
+
+今回は自分の環境に合わせて
+
+- NODE_VERSION に 22.14.0
+- PNPM_VERSION に 10.8.0
+
+## TODO
+
+functions を使ってみたいので、
+wrangler を設定する。C3 でテンプレート作ってコピペすればいいと思う。

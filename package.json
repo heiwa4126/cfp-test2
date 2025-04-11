@@ -6,7 +6,6 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc -b && vite build",
-		"lint": "eslint .",
 		"preview": "vite preview",
 		"format": "biome format --write . && dprint fmt  && textlint --fix \"**/*.md\""
 	},
@@ -15,13 +14,9 @@
 		"react-dom": "^19.1.0"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.24.0",
 		"@types/react": "^19.1.0",
 		"@types/react-dom": "^19.1.2",
 		"@vitejs/plugin-react": "^4.3.4",
-		"eslint": "^9.24.0",
-		"eslint-plugin-react-hooks": "^5.2.0",
-		"eslint-plugin-react-refresh": "^0.4.19",
 		"globals": "^16.0.0",
 		"typescript": "~5.8.3",
 		"typescript-eslint": "^8.29.1",
