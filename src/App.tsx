@@ -3,6 +3,15 @@ import "./App.css";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
+function Counter() {
+	const [count, setCount] = useState(0);
+	return (
+		<button type="button" onClick={() => setCount((count) => count + 1)}>
+			count is {count}
+		</button>
+	);
+}
+
 function App() {
 	const [count, setCount] = useState(0);
 
@@ -16,11 +25,13 @@ function App() {
 					<img src={reactLogo} className="logo react" alt="React logo" />
 				</a>
 			</div>
-			<h1>Vite + React + TS on Cloudflare Pages</h1>
+			<h1>
+				Vite + React + TS
+				<br />
+				on Cloudflare Pages
+			</h1>
 			<div className="card">
-				<button type="button" onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
+				<Counter />
 				<p>
 					Edit <code>src/App.tsx</code> and save to test HMR
 				</p>

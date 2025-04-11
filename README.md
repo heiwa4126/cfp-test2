@@ -10,7 +10,7 @@ pnpm create vite cfp-test2 --template react-ts
 
 で作って、ちょっとだけ修正 & リフォーマットしたもの。
 
-## Cloudflare Pages のために変更した点
+## Cloudflare Pages の設定で普通でない点
 
 ビルドコマンドは `pnpm install --frozen-lockfile && pnpm run build`
 (`npm ci`に相当)
@@ -28,7 +28,10 @@ pnpm のバージョン指定用に
 - NODE_VERSION に 22.14.0
 - PNPM_VERSION に 10.8.0
 
+**注意:** 環境はプロダクションとプレビューの複数ある。
+
 ## TODO
 
 functions を使ってみたいので、
-wrangler を設定する。C3 でテンプレート作ってコピペすればいいと思う。
+wrangler を設定する。
+C3 でテンプレート作ってコピペすればいいと思う。
