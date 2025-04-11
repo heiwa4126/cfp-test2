@@ -13,6 +13,8 @@ function Counter() {
 }
 
 function App() {
+	const [name, setName] = useState("unknown");
+
 	return (
 		<>
 			<div>
@@ -34,6 +36,24 @@ function App() {
 					Edit <code>src/App.tsx</code> and save to test HMR
 				</p>
 			</div>
+
+			<div className="card">
+				<button
+					type="button"
+					onClick={() => {
+						fetch("/api/hello")
+							.then((res) => res.json() as Promise<{ message: string }>)
+							.then((data) => setName(data.message));
+					}}
+					aria-label="get name"
+				>
+					Name from API is: {name}
+				</button>
+				<p>
+					Edit <code>functions/api/hello.js</code> to change the name
+				</p>
+			</div>
+
 			<p className="read-the-docs">Click on the Vite and React logos to learn more</p>
 		</>
 	);
