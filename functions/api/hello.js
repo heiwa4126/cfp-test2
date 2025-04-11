@@ -9,7 +9,7 @@ export function onRequest(context) {
 
 	return new Response(
 		JSON.stringify({
-			message: `${currentTime} - ${randomMessage}`,
+			message: `(${currentTime}) ${randomMessage}`,
 		}),
 		{
 			headers: {

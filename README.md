@@ -30,11 +30,11 @@ pnpm のバージョン指定用に
 
 **注意:** 環境はプロダクションとプレビューの複数ある。
 
-## TODO
+## functions を追加してみた
 
-functions を使ってみたいので、
-wrangler を設定する。
-C3 でテンプレート作ってコピペすればいいと思う。
+wrangler を追加。 `pnpm install -D wrangler @cloudflare/workers-types`
+
+run-scripts を修正。
 
 "wrangler pages dev --local -- vite" が
 
@@ -44,3 +44,16 @@ C3 でテンプレート作ってコピペすればいいと思う。
 ということで使えなくなるらしい。
 
 vite 側の proxy を使う。[vite.config.ts](vite.config.ts)参照。
+
+run-scripts の"dev"と"dev:0" 参照。
+concurrently を使ってちょっとカッコよくする。
+`pnpm install -D concurrently`
+
+[wrangler.toml](wrangler.toml)と functions/ 以下を追加。
+wrangler.toml の main=は必要なんだかわからないけど、無いとうるさいのでダミー置いた。
+
+あとは React 側を修正。
+
+GitHub にあげてプルリクつくって、プレビュービルドで確認して、あとで main にマージ。
+
+Cloudflare 側でビルドするとき wrangler v3 なのがちょっとイヤかも。
