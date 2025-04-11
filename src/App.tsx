@@ -12,9 +12,24 @@ function Counter() {
 	);
 }
 
-function App() {
-	const [name, setName] = useState("unknown");
+function HelloMessage() {
+	const [message, setMessage] = useState("unknown");
+	return (
+		<button
+			type="button"
+			onClick={() => {
+				fetch("/api/hello")
+					.then((res) => res.json() as Promise<{ message: string }>)
+					.then((data) => setMessage(data.message));
+			}}
+			aria-label="get name"
+		>
+			Message from API is: {message}
+		</button>
+	);
+}
 
+function App() {
 	return (
 		<>
 			<div>
@@ -38,19 +53,9 @@ function App() {
 			</div>
 
 			<div className="card">
-				<button
-					type="button"
-					onClick={() => {
-						fetch("/api/hello")
-							.then((res) => res.json() as Promise<{ message: string }>)
-							.then((data) => setName(data.message));
-					}}
-					aria-label="get name"
-				>
-					Name from API is: {name}
-				</button>
+				<HelloMessage />
 				<p>
-					Edit <code>functions/api/hello.js</code> to change the name
+					Edit <code>functions/api/hello.js</code> to change the message
 				</p>
 			</div>
 
