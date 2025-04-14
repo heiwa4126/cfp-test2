@@ -29,6 +29,25 @@ function HelloMessage() {
 	);
 }
 
+function Cowsay() {
+	const [cow, setCow] = useState("");
+	return (
+		<>
+			<button
+				type="button"
+				onClick={() => {
+					fetch("/api/cowsay")
+						.then((res) => res.text() as Promise<string>)
+						.then((data) => setCow(data));
+				}}
+			>
+				Moo!
+			</button>
+			<pre style={{ fontFamily: "courier", textAlign: "left" }}>{cow}</pre>
+		</>
+	);
+}
+
 function App() {
 	return (
 		<>
@@ -56,6 +75,13 @@ function App() {
 				<HelloMessage />
 				<p>
 					Edit <code>functions/api/hello.js</code> to change the message
+				</p>
+			</div>
+
+			<div className="card">
+				<Cowsay />
+				<p>
+					Edit <code>functions/api/cowsay.ts</code> to change the message
 				</p>
 			</div>
 
