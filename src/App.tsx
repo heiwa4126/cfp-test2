@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import reactLogo from "./assets/react.svg";
+import cloudflareLogo from "/cloudflare.svg";
+import reactLogo from "/react.svg";
 import viteLogo from "/vite.svg";
 
 function Counter() {
@@ -43,7 +44,9 @@ function Cowsay() {
 			>
 				Moo!
 			</button>
-			<pre style={{ fontFamily: "courier", textAlign: "left" }}>{cow}</pre>
+			<div className="cow-container">
+				<pre>{cow}</pre>
+			</div>
 		</>
 	);
 }
@@ -58,11 +61,14 @@ function App() {
 				<a href="https://react.dev" target="_blank" rel="noreferrer">
 					<img src={reactLogo} className="logo react" alt="React logo" />
 				</a>
+				<a href="https://pages.cloudflare.com/" target="_blank" rel="noreferrer">
+					<img src={cloudflareLogo} className="logo cloudflare" alt="Cloudflare logo" />
+				</a>
 			</div>
 			<h1>
 				Vite + React + TS
 				<br />
-				on Cloudflare Pages
+				on Cloudflare Pages & Functions
 			</h1>
 			<div className="card">
 				<Counter />

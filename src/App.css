@@ -40,3 +40,12 @@
 .read-the-docs {
 	color: #888;
 }
+
+.cow-container {
+	display: flex;
+	justify-content: center;
+}
+.cow-container pre{
+	text-align: left;
+	font-family: Consolas, "courier new", courier, monospace;
+}
