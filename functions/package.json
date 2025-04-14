@@ -1,9 +1,0 @@
-{
-	"name": "functions",
-	"version": "1.0.0",
-	"main": "index.js",
-	"packageManager": "pnpm@10.8.0",
-	"dependencies": {
-		"cowsay": "^1.6.0"
-	}
-}
