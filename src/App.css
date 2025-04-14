@@ -45,7 +45,18 @@
 	display: flex;
 	justify-content: center;
 }
-.cow-container pre{
+.cow-container pre {
 	text-align: left;
 	font-family: Consolas, "courier new", courier, monospace;
 }
+
+nav a + a::before {
+	content: "|";
+	display: inline-block;
+	margin-left: 0.4em;
+	margin-right: 0.4em;
+}
+
+nav .active {
+	color: #4caf50;
+} /* for Navlink */
