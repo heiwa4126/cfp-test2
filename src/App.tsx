@@ -1,4 +1,4 @@
-import { NavLink, Route, Routes } from "react-router";
+import { NavLink, Outlet, Route, Routes } from "react-router";
 import About from "./About";
 import "./App.css";
 import Home from "./Home";
@@ -12,15 +12,23 @@ export function Nav() {
 	);
 }
 
-function App() {
+function Layout1() {
 	return (
 		<>
 			<Nav />
-			<Routes>
+			<Outlet />
+		</>
+	);
+}
+
+function App() {
+	return (
+		<Routes>
+			<Route element={<Layout1 />}>
 				<Route index path="/" element={<Home />} />
 				<Route path="/about" element={<About />} />
-			</Routes>
-		</>
+			</Route>
+		</Routes>
 	);
 }
 

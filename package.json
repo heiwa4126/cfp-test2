@@ -9,7 +9,7 @@
 		"dev": "concurrently \"pnpm dev:vite\" \"pnpm dev:pages\"",
 		"dev:0": "pnpm dev:vite & pnpm dev:pages",
 		"build": "tsc -b && vite build",
-		"preview": "vite preview",
+		"preview": "concurrently \"vite preview\" \"pnpm dev:pages\"",
 		"format": "biome format --write . && dprint fmt  && textlint --fix \"**/*.md\""
 	},
 	"dependencies": {
