@@ -57,3 +57,5 @@ wrangler.toml の main=は必要なんだかわからないけど、無いとう
 GitHub にあげてプルリクつくって、プレビュービルドで確認して、あとで main にマージ。
 
 Cloudflare 側でビルドするとき wrangler v3 なのがちょっとイヤかも。
+
+で、これだと vite が先に立ってるので、\_redirect のテストなんかは出来ない、と思う。
