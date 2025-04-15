@@ -1,4 +1,4 @@
-import { NavLink, Outlet, Route, Routes } from "react-router";
+import { Link, NavLink, Outlet, Route, Routes } from "react-router";
 import About from "./About";
 import "./App.css";
 import Home from "./Home";
@@ -21,6 +21,18 @@ function Layout1() {
 	);
 }
 
+function NotFound() {
+	return (
+		<main>
+			<h1>404</h1>
+			<p className="read-the-docs">Not Found</p>
+			<p>
+				<Link to="/">Home</Link>
+			</p>
+		</main>
+	);
+}
+
 function App() {
 	return (
 		<Routes>
@@ -28,6 +40,7 @@ function App() {
 				<Route index path="/" element={<Home />} />
 				<Route path="/about" element={<About />} />
 			</Route>
+			<Route path="*" element={<NotFound />} />
 		</Routes>
 	);
 }
