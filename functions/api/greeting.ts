@@ -1,3 +1,7 @@
+/**
+ * テスト用にCORSを「どこからでも呼べる」ようにしたやつ
+ * 危険! 危険! 危険!
+ */
 import type { ExecutionContext } from "@cloudflare/workers-types";
 
 export const onRequestOptions = async (): Promise<Response> => {
@@ -12,7 +16,7 @@ export const onRequestOptions = async (): Promise<Response> => {
 	});
 };
 
-export const onRequest = async (context: ExecutionContext): Promise<Response> => {
+export const onRequestGet = async (context: ExecutionContext): Promise<Response> => {
 	return new Response(
 		JSON.stringify({
 			message: "hello!",
