@@ -8,6 +8,7 @@ export const onRequest = async (context: ExecutionContext): Promise<Response> =>
 	return new Response(output, {
 		headers: {
 			"Content-Type": "text/plain",
+			"Cache-Control": "no-cache",
 		},
 	});
 };
