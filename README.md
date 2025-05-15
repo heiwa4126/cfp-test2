@@ -72,3 +72,17 @@ functions で使うモジュールを記述する package.json の場所はプ�
 ただ「どうしても」という状況はどんな状況? バンドラが優秀なので、いらんモジュールは適時切り落としてると思う。
 
 ## GitHub 連携やめてみた
+
+```sh
+pnpm i
+pnpm create
+pnpm build
+pnpm run deploy
+```
+
+カレントの git branch 名でデプロイされるらしい。
+メインは main にしてある(run-scripts 参照)
+
+./functions も deploy で勝手に処理してくれる。
+「gzip 後 3MB」の制限の確認方法は特に無い。
+[Worker size](https://developers.cloudflare.com/workers/platform/limits/#worker-size)
