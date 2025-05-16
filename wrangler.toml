@@ -1,3 +1,4 @@
 name = "cfp-test2"
 compatibility_date = "2024-05-07"
 pages_build_output_dir = "dist"
+minify = true

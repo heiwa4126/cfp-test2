@@ -12,7 +12,9 @@
 		"preview": "concurrently \"vite preview\" \"pnpm dev:pages\"",
 		"format": "biome format --write . && dprint fmt  && textlint --fix \"**/*.md\"",
 		"create": "wrangler pages project create cfp-test2 --production-branch main",
-		"deploy": "wrangler pages deploy"
+		"deploy": "wrangler pages deploy",
+		"trivy": "trivy config . && trivy fs .",
+		"trivy-license": "trivy fs --scanners license --severity HIGH,CRITICAL ."
 	},
 	"dependencies": {
 		"cowsay": "^1.6.0",
