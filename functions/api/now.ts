@@ -1,6 +1,6 @@
 import type { ExecutionContext } from "@cloudflare/workers-types";
 
-export const onRequest = async (context: ExecutionContext): Promise<Response> => {
+export const onRequest = async (_context: ExecutionContext): Promise<Response> => {
 	const now = new Date();
 
 	return new Response(

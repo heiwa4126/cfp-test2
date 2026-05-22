@@ -16,7 +16,7 @@ export const onRequestOptions = async (): Promise<Response> => {
 	});
 };
 
-export const onRequestGet = async (context: ExecutionContext): Promise<Response> => {
+export const onRequestGet = async (_context: ExecutionContext): Promise<Response> => {
 	return new Response(
 		JSON.stringify({
 			message: "hello!",

@@ -1,4 +1,4 @@
-export function onRequest(context) {
+export function onRequest(_context) {
 	const greetings = [
 		"Hello from Cloudflare Pages Functions!",
 		"Hi there! Welcome to Cloudflare Pages!",
