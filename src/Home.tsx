@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import cloudflareLogo from "/cloudflare.svg";
 import reactLogo from "/react.svg";
+import testImage from "/test.jpg";
 import viteLogo from "/vite.svg";
 
 function Counter() {
@@ -63,6 +64,9 @@ function Home() {
 				</a>
 				<a href="https://pages.cloudflare.com/" target="_blank" rel="noreferrer">
 					<img src={cloudflareLogo} className="logo cloudflare" alt="Cloudflare logo" />
+				</a>
+				<a href="https://example.com" target="_blank" rel="noreferrer">
+					<img src={testImage} className="logo test" alt="Test logo" />
 				</a>
 			</div>
 			<h1>
