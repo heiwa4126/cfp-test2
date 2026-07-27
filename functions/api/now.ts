@@ -6,15 +6,15 @@ export const onRequest = async (_context: ExecutionContext): Promise<Response> =
 	return new Response(
 		JSON.stringify({
 			// timestamp: now.getTime(),
-			iso: now.toISOString(),
+			iso: now.toISOString()
 			// utc: now.toUTCString(),
 			// local: now.toString(),
 		}),
 		{
 			headers: {
-				"Content-Type": "application/json",
+				"Content-Type": "application/json"
 				// "Access-Control-Allow-Origin": "*",
-			},
-		},
+			}
+		}
 	);
 };

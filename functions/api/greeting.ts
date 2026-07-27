@@ -11,22 +11,22 @@ export const onRequestOptions = async (): Promise<Response> => {
 			"Access-Control-Allow-Origin": "*",
 			"Access-Control-Allow-Headers": "*",
 			"Access-Control-Allow-Methods": "GET, OPTIONS",
-			"Access-Control-Max-Age": "86400",
-		},
+			"Access-Control-Max-Age": "86400"
+		}
 	});
 };
 
 export const onRequestGet = async (_context: ExecutionContext): Promise<Response> => {
 	return new Response(
 		JSON.stringify({
-			message: "hello!",
+			message: "hello!"
 		}),
 		{
 			headers: {
 				"Content-Type": "application/json",
 				"Access-Control-Allow-Origin": "*",
-				"Access-Control-Max-Age": "86400",
-			},
-		},
+				"Access-Control-Max-Age": "86400"
+			}
+		}
 	);
 };

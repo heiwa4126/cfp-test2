@@ -6,15 +6,15 @@ export default defineConfig({
 	plugins: [react()],
 	build: {
 		rollupOptions: {
-			external: ["react", "react-dom/client", "react-router"],
-		},
+			external: ["react", "react-dom/client", "react-router"]
+		}
 	},
 	server: {
 		proxy: {
 			"/api": {
 				target: "http://localhost:8788", // Wranglerのポート
-				changeOrigin: true,
-			},
-		},
-	},
+				changeOrigin: true
+			}
+		}
+	}
 });
